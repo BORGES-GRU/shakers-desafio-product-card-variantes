@@ -1,0 +1,71 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+{{ "metaobject-slider.css" | asset_url | stylesheet_tag }}
+
+
+{%- assign selected_handle = section.settings.selected_product -%}
+{%- assign main_product = all_products[selected_handle] -%}
+
+<div class="metaobject-slider-wrapper">
+  {%- if main_product != blank -%}
+
+    {%- assign slider_entries = main_product.metafields.custom.related_products_with_banner.value -%}
+
+    <h2 class="slider-title">{{ section.settings.title }}</h2>
+
+    {%- if slider_entries != blank -%}
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+
+          {% for product_with_banner in slider_entries %}
+            {% assign banner = product_with_banner.product %}
+            {% assign product_b_handle = product_with_banner.produt %}
+            {% assign product_b = all_products[product_b_handle] %}
+            {% if product_b != blank %}
+              <div class="swiper-slide">
+                <a href="{{ product_b.url }}">
+                  {{ banner | image_url: width: 900 | image_tag: loading: 'lazy', class: 'lp-img', alt: featured_product.title }}
+                  <h2>
+                    <product_b class="title">{{ product_b.title }}</product_b>
+                  </h2>
+                </a>
+              </div>
+            {% endif %}
+          {% endfor %}
+
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+    {%- else -%}
+    {%- endif -%}
+
+  {%- else -%}
+    <p style="text-align: center;">Por favor, selecione um produto no menu lateral do Editor.</p>
+  {%- endif -%}
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+<script src="{{ 'metaobject-slider.js' | asset_url }}" defer="defer"></script>
+
+{% schema %}
+  {
+    "name": "Metaobject Slider",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Título",
+        "default": "Destaques"
+      }, {
+        "type": "product",
+        "id": "selected_product",
+        "label": "Produto Base"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Metaobject Slider"
+      }
+    ]
+  }
+{% endschema %}

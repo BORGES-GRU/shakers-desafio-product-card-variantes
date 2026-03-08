@@ -1,0 +1,26 @@
+.metaobject-slider-wrapper {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.metaobject-slider-wrapper .mySwiper {
+  width: 100%;
+  padding-bottom: 50px;
+}
+
+.metaobject-slider-wrapper .mySwiper .swiper-button-next,
+.metaobject-slider-wrapper .mySwiper .swiper-button-prev{
+  color: #6a6a6a;
+}
+
+.metaobject-slider-wrapper .mySwiper .swiper-pagination-bullet-active{
+  background: #6a6a6a;
+}
+
+.metaobject-slider-wrapper .mySwiper .title{
+  font-size: 22px;
+  margin-top: 10px;
+  font-weight: bold;
+  text-align: center;
+}

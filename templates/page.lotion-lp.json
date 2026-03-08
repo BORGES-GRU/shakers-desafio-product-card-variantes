@@ -1,0 +1,25 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "lp_lotion_PW7nN8": {
+      "type": "lp-lotion",
+      "name": "LP Lotion",
+      "settings": {
+        "text": "",
+        "product": "freshy-skin",
+        "collection": "produtos-de-locao"
+      }
+    }
+  },
+  "order": [
+    "lp_lotion_PW7nN8"
+  ]
+}
