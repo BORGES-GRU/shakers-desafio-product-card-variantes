@@ -1,0 +1,22 @@
+{% comment %}
+  Section: product-grid
+  Objetivo: Renderizar o snippet do Product Card para cada produto da coleção.
+{% endcomment %}
+
+<div class="product-grid">
+  {% for product in collection.products %}
+    {% render 'product-card-custom', product: product %}
+  {% endfor %}
+</div>
+
+{% schema %}
+{
+  "name": "Product Grid",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Product Grid"
+    }
+  ]
+}
+{% endschema %}

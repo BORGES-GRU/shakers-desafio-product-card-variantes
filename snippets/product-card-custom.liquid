@@ -1,0 +1,33 @@
+<div class="product-card" data-product-id="{{ product.id }}">
+  <img 
+    src="{{ product.featured_image | image_url: width: 400 }}" 
+    alt="{{ product.featured_image.alt | escape }}" 
+    width="400" height="400" loading="lazy"
+  >
+  <h3>{{ product.title | escape }}</h3>
+  
+  {% comment %} Preço que será atualizado pelo JS {% endcomment %}
+  <p class="product-price" data-price-display>
+    {{ product.selected_or_first_available_variant.price | money }}
+  </p>
+
+  <div class="product-options">
+    {% for option in product.options_with_values %}
+      <label for="Option-{{ product.id }}-{{ forloop.index0 }}">{{ option.name }}</label>
+      <select class="variant-selector" data-index="{{ forloop.index0 }}">
+        {% for value in option.values %}
+          <option value="{{ value | escape }}">{{ value }}</option>
+        {% endfor %}
+      </select>
+    {% endfor %}
+  </div>
+
+  <button class="add-to-cart-btn" data-variant-id="{{ product.selected_or_first_available_variant.id }}">
+    Adicionar ao carrinho
+  </button>
+
+  {% comment %} Dados para o JS consumir {% endcomment %}
+  <script type="application/json" class="variants-json">
+    {{ product.variants | json }}
+  </script>
+</div>
