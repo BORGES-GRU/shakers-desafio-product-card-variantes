@@ -24,5 +24,5 @@ Este repositório contém a solução desenvolvida para o desafio de implementa�
 5. **Carrinho**: Clique em "Adicionar ao carrinho" e verifique a confirmação da adição.
 
 ## Links Obrigatórios
-* **Pull Request**: 
+* **Pull Request**: https://github.com/BORGES-GRU/shakers-desafio-product-card-variantes/pull/1
 * **Vídeo Demonstrativo**: 
