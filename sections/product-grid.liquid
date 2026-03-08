@@ -1,0 +1,24 @@
+<div class="product-grid">
+  {% assign collection = collections[section.settings.collection] %}
+  {% for product in collection.products %}
+    {% render 'product-card-custom', product: product %}
+  {% endfor %}
+</div>
+
+{% schema %}
+{
+  "name": "Product Grid",
+  "settings": [
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Selecione a Coleção"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Grid"
+    }
+  ]
+}
+{% endschema %}
