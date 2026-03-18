@@ -523,7 +523,7 @@ function getCardsToAnimate(grid, cards) {
   const visibleHeight = Math.round(visibleArea.bottom - visibleArea.top);
   if (visibleHeight <= 0) return 0;
 
-  /** @type {import('product-card').ProductCard | null} */
+  /** @type {import('@theme/product-card').ProductCard | null} */
   const cardSample = itemSample.querySelector('product-card');
   const gridStyle = getComputedStyle(grid);
 
